@@ -14,7 +14,7 @@ FROM ubuntu
 LABEL maintainer="thezzisu <thezzisu@gmail.com>"
 LABEL description=""
 RUN apt-get update \
-  && apt-get install --no-install-recommends -y libevent-dev openconnect ca-certificates \
+  && apt-get install --no-install-recommends -y libevent-dev openconnect ca-certificates iputils-ping wget curl telnet net-tools\
   && rm -rf /var/lib/apt/lists/*
 COPY --from=builder /root/tunsocks/tunsocks /usr/local/bin/
 COPY entrypoint.sh /entrypoint.sh
